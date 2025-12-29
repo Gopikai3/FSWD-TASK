@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hotel Reservation System</title>
+</head>
+<body>
+
+<script>
+    alert("Welcome to Grand Palace Hotel");
+
+    // Customer Name
+    let customerName = prompt("Enter your name:");
+
+    // Room Selection
+    let roomChoice = prompt(
+        "Select Room Type:\n" +
+        "1. Single Room - $100 per night\n" +
+        "2. Double Room - $150 per night\n" +
+        "3. Deluxe Room - $250 per night\n\n" +
+        "Enter 1, 2, or 3:"
+    );
+
+    let roomType = "";
+    let pricePerNight = 0;
+
+    if (roomChoice === "1") {
+        roomType = "Single Room";
+        pricePerNight = 100;
+    } else if (roomChoice === "2") {
+        roomType = "Double Room";
+        pricePerNight = 150;
+    } else if (roomChoice === "3") {
+        roomType = "Deluxe Room";
+        pricePerNight = 250;
+    } else {
+        alert("Invalid room selection!");
+    }
+
+    // Number of Nights
+    let nights = parseInt(prompt("Enter number of nights:"));
+
+    // Total Bill Calculation
+    let totalAmount = pricePerNight * nights;
+
+    // Confirmation
+    let confirmation = confirm(
+        "Reservation Details:\n\n" +
+        "Guest Name: " + customerName + "\n" +
+        "Room Type: " + roomType + "\n" +
+        "Nights: " + nights + "\n" +
+        "Total Amount: $" + totalAmount + "\n\n" +
+        "Do you want to confirm your reservation?"
+    );
+
+    if (confirmation) {
+        alert("Reservation Confirmed!\nThank you for choosing Grand Palace Hotel.");
+    } else {
+        alert("Reservation Cancelled.");
+    }
+</script>
+
+</body>
+</html>
